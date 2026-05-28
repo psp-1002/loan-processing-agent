@@ -13,6 +13,9 @@ class LoanState(TypedDict):
     dti_ratio: Optional[float]
     property_valuation: Optional[str]
     risk_score: Optional[str]
+    risk_label: Optional[str]
+    risk_justification: Optional[str]
+    similar_loans_count: Optional[int]
     final_decision: Optional[str]
     escalate_to_human: Optional[bool]
 
@@ -61,6 +64,9 @@ if __name__ == "__main__":
         "dti_ratio": None,
         "property_valuation": None,
         "risk_score": None,
+        "risk_label": None,
+        "risk_justification": None,
+        "similar_loans_count": None,
         "final_decision": None,
         "escalate_to_human": None
     })
@@ -71,6 +77,8 @@ if __name__ == "__main__":
     print(f"Credit Score : {result['credit_score']}")
     print(f"DTI Ratio    : {result['dti_ratio']}%")
     print(f"Property     : {result['property_valuation']}")
-    print(f"Risk         : {result['risk_score']}")
+    print(f"Risk         : {result['risk_label']}")
+    print(f"Rationale    : {result['risk_justification']}")
+    print(f"Similar Loans: {result['similar_loans_count']}")
     print(f"Decision     : {result['final_decision']}")
     print("="*50)
